@@ -11,7 +11,7 @@ public class OperatorNode implements Node{
         children.add(n);
     }
 
-    public List<Node> setChildren(){
+    public List<Node> getChildren(){
         return children;
     }
 
