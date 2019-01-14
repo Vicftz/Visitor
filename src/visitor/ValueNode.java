@@ -1,9 +1,13 @@
 package visitor;
 
-public class ValueNode {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ValueNode implements Node{
+    List<Node> children = new ArrayList<>();
 
     int value;
-    public ValueNode(int value){
+    public ValueNode(int value) {
         this.value = value;
     }
 
@@ -11,7 +15,16 @@ public class ValueNode {
         return value;
     }
 
+    public List<Node> getChildren(){
+        return children;
+    }
+
     public void addNode(Node n){
+        children.add(n);
+    }
+
+    public int accept(NodeVisitor v){
+        return v.visit(this);
     }
 
 }

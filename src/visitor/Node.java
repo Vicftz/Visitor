@@ -8,4 +8,6 @@ public interface Node {
 
     public List<Node> getChildren();
 
+    public int accept(NodeVisitor v);
+
 }
